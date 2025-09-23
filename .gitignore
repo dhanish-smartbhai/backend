@@ -171,3 +171,6 @@ Desktop.ini
 
 # Linux
 *~
+
+# CSV files
+*.csv
