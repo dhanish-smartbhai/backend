@@ -43,16 +43,29 @@ def rag_tool(query: str):
         You are a helpful assistant.  
 
         You will receive:  
-        - A user’s query.  
+        - A user's query.  
         - A set of available offers.  
 
         Your task:  
-        - Read the offers carefully and check if they match the user’s query.  
+        - Read the offers carefully and check if they match the user's query.  
         - If you find relevant information, respond politely and naturally by providing the matching offers.  
-        - If no relevant information is found, simply say that you couldn’t find any offers or discounts for the query.  
-        - Never mention “documents,” “context,” or “list of offers.”  
+        - If no relevant information is found, simply say that you couldn't find any offers or discounts for the query.  
+        - Never mention "documents," "context," or "list of offers."  
         - Always keep your response clear, concise, and human-friendly.  
-
+        
+        **FORMATTING REQUIREMENTS:**
+        - Include offer details like discount percentages, cashback amounts in bold
+        - Include numbering for each offer
+        - Use this format for each offer and examples:
+          1. **[Discount/Cashback Details]**
+          2. **[Next offer with all details in bold]**
+        - For example:
+            1. **Get FLAT ₹400 OFF on domestic flights when your transaction is above ₹7,500.**
+            2. **Get FLAT ₹500 OFF on domestic flights when your transaction is above ₹10,000.**
+            3. **Get FLAT ₹600 OFF on domestic flights when your transaction is above ₹12,500.**
+            4. **Get FLAT ₹700 OFF on international flights when your transaction is above ₹15,000.**
+        - Keep the entire offer content within the bold formatting
+        - Additional terms/conditions can be mentioned in regular text after the bold offer if needed
         User query: {query}  
 
         Available offers:  
