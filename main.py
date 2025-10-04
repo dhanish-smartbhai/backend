@@ -23,9 +23,9 @@ class ChatRequest(BaseModel):
     chat_history: List[dict]  # [{"role": "human", "content": "..."}, {"role": "system", "content": "..."}]
 
 # Response body model
-class ChatResponse(BaseModel):
-    answer: str
-    # updated_history: List[dict]
+# class ChatResponse(BaseModel):
+#     answer: str
+#     flight_data: List[dict]
 
 @app.get("/")
 def home():
@@ -33,10 +33,8 @@ def home():
 
 
 
-@app.post("/chat", response_model=ChatResponse)
+@app.post("/chat")
 def chat_endpoint(request: ChatRequest):
 
     result = model_with_tool.rag_agent(request.chat_history)
-
-    return ChatResponse(answer=result["content"])
-
+    return result
